@@ -1,5 +1,4 @@
-<%
-=begin%>
+<!-- 
  <form accept-charset="UTF-8" action="/users" method="post">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
 
@@ -19,17 +18,36 @@
 
   <input type="submit" value="Submit">
 </form> 
-<%
-=end%>
+ -->
 
-<%= form_tag( '/' , method: "get") do %>
-<%= label_tag(:username ,'username')%>
-<%= text_field_tag (:username )%>
-<%= label_tag(:email ,'email')%>
-<%= email_field_tag (:email)%>
-<%= label_tag(:password ,'password')%>
-<%= password_field_tag (:password )%>
-<%= label_tag(:password_confirmation , 'confirmation')%>
-<%= password_field_tag (:password_confirmation )%>
+
+<!-- <%= form_tag( '/users/new' , method: "get") do %>
+<%= label_tag(:username ,'username')%> <br>
+<%= text_field_tag (:username )%><br>
+<%= label_tag(:email ,'email')%><br>
+<%= email_field_tag (:email)%><br>
+<%= label_tag(:password ,'password')%><br>
+<%= password_field_tag (:password )%><br>
+<%= label_tag(:password_confirmation , 'confirmation')%><br>
+<%= password_field_tag (:password_confirmation )%><br>
  <%= submit_tag("create") %>
+<% end %> -->
+
+
+<%= form_for @user do |f| %>
+
+<%= f.label :username, "Name" %> <br>
+ <%= f.text_field :username, placeholder:"Your name" %><br>
+
+ <%= f.label :email, "email" %><br>
+ <%= f.email_field :email, placeholder: "example@example.com" %><br>
+
+<%= f.label :password, "Password" %><br>
+<%= f.password_field :password %><br>
+
+<%= f.label :password_confirmation, "Confirmation" %><br>
+<%= f.password_field :password_confirmation %><br>
+
+<%= f.submit "Create" %>
+
 <% end %>
