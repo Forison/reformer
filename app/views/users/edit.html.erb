@@ -35,6 +35,7 @@
 
 
 <%= form_for @user, action: "user/id" do |f| %>
+<%= render "layouts/error_messages"%>
 
 <%= f.label :username, "Name" %> <br>
  <%= f.text_field :username, placeholder:"Your name" %><br>
@@ -48,6 +49,6 @@
 <%= f.label :password_confirmation, "Confirmation" %><br>
 <%= f.password_field :password_confirmation %><br>
 
-<%= f.submit "Create" %>
+<%= f.submit "Update" %>
 
 <% end %>

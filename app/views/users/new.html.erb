@@ -35,7 +35,7 @@
 
 
 <%= form_for @user do |f| %>
-
+<%= render "layouts/error_messages"%>
 <%= f.label :username, "Name" %> <br>
  <%= f.text_field :username, placeholder:"Your name" %><br>
 
