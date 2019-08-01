@@ -25,33 +25,14 @@ $ rails server
 Once it's up and running you can see the working implementations in:
 
 ```
-http://localhost:3000/
+http://localhost:3000/users/new
 ```
 
-You will need to create your own users from the rails console
+and 
 
 ```
-rails console 
-```
+http://localhost:3000/users/1/edit
 
 ```
-> u = User.new
 
-```
-You will need to add the name, email, password and password confirmation attributes.
-
-```
-User.save
-```
-
-Once you are logged in you can create posts from:
-
-```
-http://localhost:3000/posts/new
-```
-
-And see the created posts in 
-
-```
-http://localhost:3000/posts/index
-```
+A user should be created before trying to access the last one by it's id.
